@@ -23,6 +23,13 @@ class CalculusRatiocinatorTest {
 
     @Test
     void evaluerAssertion() {
+        var cr = new CalculusRatiocinator();
+        var premierAffirmation = new SimpleAssertion("Lou est beau", ValuerDeVeriter.VRAI);
+        var deuxiemeAffirmation = new SimpleAssertion("Lou est pauvre", ValuerDeVeriter.FAUSSE);
+        cr.ajouterAssertion(premierAffirmation);
+        cr.ajouterAssertion(deuxiemeAffirmation);
+        assertEquals(ValuerDeVeriter.VRAI, cr.evaluerAssertion(premierAffirmation));
+        assertEquals(ValuerDeVeriter.FAUSSE, cr.evaluerAssertion(deuxiemeAffirmation));
     }
 
     @Test
