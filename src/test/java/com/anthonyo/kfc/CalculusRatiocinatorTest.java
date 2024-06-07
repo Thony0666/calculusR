@@ -1,5 +1,6 @@
 package com.anthonyo.kfc;
 
+import com.anthonyo.kfc.conjoction.Et;
 import com.anthonyo.kfc.enums.ValuerDeVeriter;
 import org.junit.jupiter.api.Test;
 
@@ -34,9 +35,17 @@ class CalculusRatiocinatorTest {
 
     @Test
     void testEvaluerAssertion() {
+            var calculusRatiocinator = new CalculusRatiocinator();
+            var premierAffirmation = new SimpleAssertion("Lou est beau", ValuerDeVeriter.VRAI);
+            var deuxiemeAffirmation = new SimpleAssertion("Lou est pauvre", ValuerDeVeriter.FAUSSE);
+            var compositeAffirmation = new CompositeAssertion("Lou est beau et Lou est pauvre", premierAffirmation, deuxiemeAffirmation, new Et());
+            calculusRatiocinator.ajouterAssertion(compositeAffirmation);
+            assertEquals(ValuerDeVeriter.FAUSSE, calculusRatiocinator.evaluerAssertion(compositeAffirmation));
+
     }
 
     @Test
     void getAssertions() {
+        
     }
 }

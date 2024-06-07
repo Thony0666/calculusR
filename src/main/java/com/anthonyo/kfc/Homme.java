@@ -8,11 +8,15 @@ import lombok.ToString;
 @EqualsAndHashCode
 @Getter
 @ToString
-@RequiredArgsConstructor
 public final class Homme {
     private final CalculusRatiocinator calculusRatiocinator;
+
     private final String name;
 
+    public Homme(String name) {
+        this.name = name;
+        this.calculusRatiocinator = new CalculusRatiocinator();
+    }
 
 
     public void ajouterAssertion(Assertion assertion) {
@@ -23,7 +27,7 @@ public final class Homme {
         return calculusRatiocinator.evaluerAssertion(assertion);
     }
 
-    public ValuerDeVeriter evalueAssertion(Assertion premierAssertion, Assertion deuxiemeAssertion, Conjonction conjonction) {
+    public ValuerDeVeriter evaluerAssertion(Assertion premierAssertion, Assertion deuxiemeAssertion, Conjonction conjonction) {
         return calculusRatiocinator.evaluerAssertion(premierAssertion, deuxiemeAssertion, conjonction);
     }
 }

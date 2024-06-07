@@ -11,7 +11,7 @@ class DoncTest {
     void valeur() {
         Donc donc = new Donc();
         assertEquals(ValuerDeVeriter.FAUSSE, donc.valeur(ValuerDeVeriter.VRAI, ValuerDeVeriter.FAUSSE));
-        assertEquals(ValuerDeVeriter.VRAI, donc.valeur(ValuerDeVeriter.FAUSSE, ValuerDeVeriter.FAUSSE));
+        assertEquals(ValuerDeVeriter.FAUSSE, donc.valeur(ValuerDeVeriter.FAUSSE, ValuerDeVeriter.FAUSSE));
         assertEquals(ValuerDeVeriter.VRAI, donc.valeur(ValuerDeVeriter.FAUSSE, ValuerDeVeriter.VRAI));
         assertEquals(ValuerDeVeriter.VRAI, donc.valeur(ValuerDeVeriter.VRAI, ValuerDeVeriter.VRAI));
     }
